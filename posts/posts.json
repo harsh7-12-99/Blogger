@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello World",
+    "date": "2025-09-01",
+    "summary": "The very first post of the blog starter."
+  },
+  {
+    "slug": "shraddha",
+    "title": "Shraddha",
+    "date": "2025-09-01",
+    "summary": "A few things about Shraddha."
+  }
+]

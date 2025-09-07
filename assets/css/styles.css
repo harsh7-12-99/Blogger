@@ -1,0 +1,39 @@
+:root{
+  --bg: #0b1220; /* slate-950-ish */
+  --panel: #101a2d;
+  --text: #e6eaf2;
+  --muted: #9aa3b2;
+  --brand: #7c5cff; /* electric indigo */
+  --brand-2: #18b2ff; /* cyan accent */
+  --ring: rgba(124,92,255,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,var(--bg),#0e1628 40%,#0a1020 100%);color:var(--text)}
+.container{max-width:960px;margin:0 auto;padding:24px}
+.site-header,.site-footer{display:flex;align-items:center;justify-content:space-between}
+.brand{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:800;text-decoration:none}
+nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
+nav a.active, nav a:hover{color:#fff}
+.hero{padding:64px 0 32px}
+.hero h1{font-size:48px;margin:0 0 12px}
+.lead{font-size:18px;color:var(--muted);max-width:720px}
+.cta-row{margin-top:20px;display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.btn.ghost{background:transparent;border:1px solid #1f2a44;color:#dbe2ee}
+.about,.recent-posts,.contact{background:rgba(255,255,255,.02);border:1px solid #1b2642;border-radius:16px;padding:20px;margin:24px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{border:1px solid #1b2642;border-radius:16px;padding:16px;background:linear-gradient(180deg,var(--panel),#0c162a)}
+.card h3{margin:0 0 10px}
+.card p{margin:0;color:var(--muted)}
+.card a{display:inline-block;margin-top:10px;color:#fff;text-decoration:none}
+.card a:hover{opacity:.9}
+.blog-list{list-style:none;padding:0;margin:20px 0}
+.blog-list li{padding:12px 0;border-bottom:1px dashed #1d2948;display:flex;justify-content:space-between;gap:16px}
+.blog-list a{text-decoration:none;color:#fff}
+.muted{color:var(--muted)}
+.post h1{margin-bottom:8px}
+.prose p{line-height:1.7}
+.prose pre{background:#0a1220;border-radius:12px;padding:12px;overflow:auto}
+.prose code{background:#0a1220;padding:2px 6px;border-radius:6px}
+:focus{outline:none;box-shadow:0 0 0 3px var(--ring)}
