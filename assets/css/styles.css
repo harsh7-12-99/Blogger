@@ -146,3 +146,109 @@ nav a.active, nav a:hover{color:#fff}
 }
 
 
+html[data-theme="light"]{
+--muted: #445066;
+--brand: #5b4df2;
+--brand-2: #0ea5e9;
+--ring: rgba(91,77,242,.25);
+--link: #0b5ed7;
+--link-hover: #052c65;
+--link-underline: rgba(11,94,215,.35);
+--tile: #f2f6ff;
+--tile-border: #d9e2f2;
+--tile-hover: #e9f0ff;
+}
+
+
+/* Smooth color transitions */
+html, body, .about, .recent-posts, .contact, .panel, .card, .skill, .tile {
+transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+
+/* Light mode backgrounds for key panels */
+html[data-theme="light"] body{
+background: linear-gradient(180deg,#f7f9fc,#eef3fb 40%,#eaf0fb 100%);
+}
+html[data-theme="light"] .about,
+html[data-theme="light"] .recent-posts,
+html[data-theme="light"] .contact,
+html[data-theme="light"] .panel{
+background: linear-gradient(180deg, var(--panel), #f8fbff);
+border-color: #e3e9f5;
+}
+html[data-theme="light"] .card,
+html[data-theme="light"] .skill,
+html[data-theme="light"] .tile{
+background: linear-gradient(180deg, #ffffff, #f6f9ff);
+border-color: var(--tile-border);
+}
+
+
+/* Theme toggle button */
+.theme-toggle{
+margin-left: 12px;
+display: inline-flex; align-items: center; justify-content: center;
+width: 38px; height: 38px; border-radius: 10px;
+border: 1px solid rgba(255,255,255,.18);
+background: transparent; color: var(--text);
+cursor: pointer; font-size: 18px; line-height: 1;
+}
+.theme-toggle:hover{ filter: brightness(1.05); }
+.theme-toggle:focus{ outline: none; box-shadow: 0 0 0 3px var(--ring); }
+
+
+/* Header nav colors in light mode */
+html[data-theme="light"] nav a{ color: var(--muted); }
+html[data-theme="light"] nav a.active, html[data-theme="light"] nav a:hover{ color: var(--text); }
+
+
+/* Optional: hero avatar frame in light mode if/when you re-add image */
+html[data-theme="light"] .avatar-frame{ box-shadow: 0 12px 30px rgba(0,0,0,.1); }
+
+/* ===== Fix: Light theme text readability ===== */
+html[data-theme="light"] {
+  --text: #0b1220;   /* dark base text */
+  --muted: #445066; /* softer muted text */
+}
+
+html[data-theme="light"] body {
+  background: linear-gradient(180deg, #f7f9fc, #eef3fb 40%, #eaf0fb 100%);
+}
+
+/* Panels in light mode */
+html[data-theme="light"] .about,
+html[data-theme="light"] .recent-posts,
+html[data-theme="light"] .contact,
+html[data-theme="light"] .panel {
+  background: #ffffff;
+  border-color: #e3e9f5;
+  color: var(--text);
+}
+
+/* Text inside panels */
+html[data-theme="light"] .about p,
+html[data-theme="light"] .recent-posts p,
+html[data-theme="light"] .contact p,
+html[data-theme="light"] .panel p,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h1 {
+  color: var(--text);
+}
+
+/* Muted text (dates, subtitles, etc.) */
+html[data-theme="light"] .muted {
+  color: var(--muted);
+}
+
+/* Blog cards and tiles */
+html[data-theme="light"] .card,
+html[data-theme="light"] .tile,
+html[data-theme="light"] .skill {
+  background: #fdfdfd;
+  border-color: #e3e9f5;
+  color: var(--text);
+}
+
+
