@@ -1,8 +1,20 @@
 [
   {
-    "slug": "hello-world",
-    "title": "Hello World",
-    "date": "2025-09-01",
-    "summary": "The very first post of the blog starter."
+    "slug": "amplitude-implementation",
+    "title": "Implementing Amplitude at the Org Level — Lessons & Challenges",
+    "date": "2025-09-07",
+    "summary": "My journey with implementing Amplitude across the organization — from educating teams about events to running POCs on new features."
+  },
+  {
+    "slug": "sql-roadmap",
+    "title": "SQL Roadmap — From Basics to Advanced in 4 Steps",
+    "date": "2025-07-21",
+    "summary": "A practical and structured guide that takes you from writing your first SELECT to mastering advanced SQL skills in four steps."
+  },
+  {
+    "slug": "aws-architect-journey",
+    "title": "My AWS Solution Architect Journey",
+    "date": "2024-11-07",
+    "summary": "Lessons, struggles, and growth from preparing for and working with AWS as a Solution Architect."
   }
 ]

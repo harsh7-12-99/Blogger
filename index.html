@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -18,20 +19,90 @@
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h1>Harsh Jiladiya</h1>
-      <p class="lead">Data, engineering, and product analytics — sharing notes, experiments, and learnings.</p>
-      <div class="cta-row">
-        <a class="btn" href="/blog/">Read the blog</a>
-        <a class="btn ghost" href="#contact">Contact</a>
+    <!-- HERO -->
+    <section class="hero hero--portrait">
+      <div class="hero__text">
+        <p class="overline">I’m</p>
+        <h1>Harsh Jiladiya</h1>
+        <p class="lead">Data engineer & analytics enthusiast. I build reliable data workflows, explore product insights, and share practical notes.</p>
+        <div class="cta-row">
+          <a class="btn" href="/blog/">Read the blog</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <!-- Replace this placeholder with your photo at /assets/images/harsh.jpg -->
+        <div class="avatar-frame">
+          <img src="/assets/images/harsh.jpg" alt="Portrait of Harsh Jiladiya" onerror="this.src='https://placehold.co/420x520/0b1220/ffffff?text=Your+Photo'" />
+        </div>
       </div>
     </section>
 
-    <section class="about">
+    <!-- ABOUT (expanded) -->
+    <section class="about about--expanded">
       <h2>About</h2>
-      <p>Short intro goes here. Replace this text with your bio, what you’re working on, and what you write about.</p>
+      <p>
+        I enjoy turning messy, real‑world data into dependable systems that help people make better decisions. My work spans
+        data modeling, pipelines, and analytics enablement. I like simple architectures, strong naming, and shipping small,
+        frequent improvements. On this site I write short, practical posts—things I’ve learned while building or debugging.
+      </p>
+      <p>
+        Outside work, you’ll find me exploring new tools, organizing workflows, and experimenting with visualizations.
+        I’m especially interested in high‑signal metrics, event data quality, and making dashboards that actually get used.
+      </p>
     </section>
 
+    <!-- KNOW ME / WHAT I LIKE (between About and Blog) -->
+    <section id="know-me" class="panel">
+      <div class="section-head">
+        <h2>Know Me</h2>
+      </div>
+      <div class="tiles">
+        <article class="tile">
+          <div class="tile__icon">☕</div>
+          <h3>Coffee + Deep Work</h3>
+          <p>Early mornings, quiet focus, and clear commits.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__icon">📊</div>
+          <h3>Event Analytics</h3>
+          <p>Thoughtful schemas; real user journeys over vanity metrics.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__icon">🧰</div>
+          <h3>Practical Tooling</h3>
+          <p>Small scripts, predictable pipelines, human‑readable docs.</p>
+        </article>
+        <article class="tile">
+          <div class="tile__icon">📚</div>
+          <h3>Learning in Public</h3>
+          <p>Notes, snippets, and experiments—shared as I go.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS (tile grid) -->
+    <section class="skills panel">
+      <div class="section-head">
+        <h2>My Skills</h2>
+      </div>
+      <div class="skills__grid">
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Git</div>
+        <div class="skill">Airflow</div>
+        <div class="skill">Snowflake</div>
+        <div class="skill">dbt</div>
+        <div class="skill">Amplitude</div>
+        <div class="skill">ETL / ELT</div>
+        <div class="skill">APIs</div>
+        <div class="skill">Data Modeling</div>
+        <div class="skill">Dashboards</div>
+      </div>
+    </section>
+
+    <!-- RECENT POSTS (existing) -->
     <section class="recent-posts">
       <div class="section-head">
         <h2>Latest Posts</h2>
@@ -40,12 +111,13 @@
       <div id="posts-grid" class="grid"></div>
     </section>
 
+    <!-- CONTACT (existing) -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <ul>
         <li>Email: <a href="mailto:harshjiladiya99@gmail.com">harshjiladiya99@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/harsh7-12-99" target="_blank" rel="noreferrer">@harsh7-12-99</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">Profile</a></li>
+        <li>GitHub: <a href="https://github.com/harsh7-12-99" target="_blank" rel="noopener">harsh7-12-99</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">Profile</a></li>
       </ul>
     </section>
   </main>

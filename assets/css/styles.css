@@ -1,43 +1,64 @@
 :root{
-  --bg: #0b1220; /* slate-950-ish */
+  --bg: #0b1220;
   --panel: #101a2d;
   --text: #e6eaf2;
   --muted: #9aa3b2;
-  --brand: #7c5cff; /* electric indigo */
-  --brand-2: #18b2ff; /* cyan accent */
+  --brand: #7c5cff;
+  --brand-2: #18b2ff;
   --ring: rgba(124,92,255,.35);
-  /* new accessible link colors (WCAG-friendly on dark bg) */
-  --link: #8fd1ff;          /* light sky */
-  --link-hover: #ffffff;    /* white on hover for max contrast */
+  --link: #8fd1ff;
+  --link-hover: #ffffff;
   --link-underline: rgba(143, 209, 255, .55);
+  --tile: #121b31;
+  --tile-border: #1b2642;
+  --tile-hover: #1a2540;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,var(--bg),#0e1628 40%,#0a1020 100%);color:var(--text)}
 .container{max-width:960px;margin:0 auto;padding:24px}
 .site-header,.site-footer{display:flex;align-items:center;justify-content:space-between}
 .brand{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:800;text-decoration:none}
-
-/* Global link styles with strong contrast */
+/* links */
 a{color:var(--link);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--link-underline);transition:color .15s ease, text-decoration-color .15s ease}
 a:hover,a:focus{color:var(--link-hover);text-decoration-color:currentColor}
 a:focus{outline:none;box-shadow:0 0 0 3px var(--ring);border-radius:6px}
-
-/* Keep header nav styling distinct */
+/* nav keeps subtle style */
 nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
 nav a.active, nav a:hover{color:#fff}
 
-.hero{padding:64px 0 32px}
-.hero h1{font-size:48px;margin:0 0 12px}
-.lead{font-size:18px;color:var(--muted);max-width:720px}
+/* HERO with portrait */
+.hero{padding:48px 0 24px}
+.hero--portrait{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.hero__text .overline{letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:600}
+.hero__text h1{font-size:46px;margin:0 0 10px}
+.hero__text .lead{font-size:18px;color:var(--muted);max-width:720px}
+.hero__media{display:flex;justify-content:flex-end}
+.avatar-frame{width:320px;max-width:100%;aspect-ratio:3/4;border-radius:24px;padding:6px;background:linear-gradient(135deg,rgba(124,92,255,.5),rgba(24,178,255,.5));}
+.avatar-frame img{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;filter:grayscale(.1)}
+
 .cta-row{margin-top:20px;display:flex;gap:12px}
 .btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .btn.ghost{background:transparent;border:1px solid #1f2a44;color:#dbe2ee}
 
 /* Panels */
-.about,.recent-posts,.contact{background:linear-gradient(180deg,var(--panel),rgba(12,22,42,.85));border:1px solid #1b2642;border-radius:16px;padding:20px;margin:24px 0}
+.about,.recent-posts,.contact,.panel{background:linear-gradient(180deg,var(--panel),rgba(12,22,42,.85));border:1px solid #1b2642;border-radius:16px;padding:20px;margin:24px 0}
+.about--expanded p{margin:10px 0;color:#d6dbea}
 .section-head{display:flex;align-items:center;justify-content:space-between}
 
-/* Grid cards */
+/* Know Me tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.tile{background:linear-gradient(180deg,var(--tile),#0f192e);border:1px solid var(--tile-border);border-radius:16px;padding:16px;transition:transform .15s ease, background .2s ease}
+.tile:hover{transform:translateY(-2px);background:var(--tile-hover)}
+.tile__icon{font-size:24px;margin-bottom:8px}
+.tile h3{margin:0 0 6px}
+.tile p{margin:0;color:var(--muted)}
+
+/* Skills grid */
+.skills__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.skill{background:linear-gradient(180deg,var(--tile),#0f192e);border:1px solid var(--tile-border);border-radius:14px;padding:12px;text-align:center;font-weight:700}
+.skill:hover{transform:translateY(-2px);background:var(--tile-hover)}
+
+/* Blog pieces */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
 .card{border:1px solid #1b2642;border-radius:16px;padding:16px;background:linear-gradient(180deg,var(--panel),#0c162a)}
 .card h3{margin:0 0 10px}
@@ -45,21 +66,28 @@ nav a.active, nav a:hover{color:#fff}
 .card a{display:inline-block;margin-top:10px}
 .card a:hover{opacity:.95}
 
-/* Blog list */
+/* Lists */
 .blog-list{list-style:none;padding:0;margin:20px 0}
 .blog-list li{padding:12px 0;border-bottom:1px dashed #1d2948;display:flex;justify-content:space-between;gap:16px}
-
 .muted{color:var(--muted)}
+
+/* Post content */
 .post h1{margin-bottom:8px}
 .prose p{line-height:1.7}
 .prose pre{background:#0a1220;border-radius:12px;padding:12px;overflow:auto}
 .prose code{background:#0a1220;padding:2px 6px;border-radius:6px}
 
-/* Contact section refinements */
+/* Contact */
 .contact ul{padding-left:20px}
 .contact li{margin:8px 0}
 .contact a{font-weight:600}
-.contact a:hover{opacity:1}
+
+/* Responsive */
+@media (max-width: 860px){
+  .hero--portrait{grid-template-columns:1fr;}
+  .hero__media{justify-content:flex-start}
+  .avatar-frame{width:260px}
+}
 
 :focus{outline:none;box-shadow:0 0 0 3px var(--ring)}
 
@@ -69,4 +97,52 @@ nav a.active, nav a:hover{color:#fff}
   margin: 16px 0;
   display: block;
 }
+
+/* HERO portrait frame — keep face as-is, blend edges into dark theme */
+.hero__media{display:flex;justify-content:flex-end}
+.avatar-frame{
+  position: relative;
+  width: 320px;           /* adjust if you like */
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  padding: 6px;
+  background:
+    linear-gradient(135deg, rgba(124,92,255,.5), rgba(24,178,255,.5)), /* existing accent rim */
+    var(--bg);            /* solid dark base behind image */
+  overflow: hidden;       /* clip the inner overlay nicely */
+  box-shadow: 0 20px 50px rgba(0,0,0,.45); /* soft lift */
+}
+
+/* IMPORTANT: no recolor on the image */
+.avatar-frame img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 32%;   /* keeps your face higher in the frame */
+  border-radius: 18px;
+  display: block;
+  /* REMOVE any existing: filter: grayscale(...); or similar */
+}
+
+/* Subtle vignette that darkens just the far edges, not the face area */
+.avatar-frame::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* dark falloff focused away from the face (center-top stays clear) */
+  background:
+    radial-gradient(120% 90% at 50% 20%,
+      rgba(11,18,32,0) 45%,
+      rgba(11,18,32,.55) 75%,
+      rgba(11,18,32,.85) 100%
+    );
+}
+
+/* Responsive tweak */
+@media (max-width: 860px){
+  .avatar-frame{ width: 260px; }
+}
+
 
